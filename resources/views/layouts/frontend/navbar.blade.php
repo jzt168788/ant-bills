@@ -8,19 +8,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">蜜蜂记账</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
+            {{--<ul class="nav navbar-nav">--}}
+                {{--<li class="active"><a href="#">Home</a></li>--}}
+                {{--<li><a href="#about">About</a></li>--}}
+            {{--</ul>--}}
             <ul class="nav navbar-nav navbar-right">
                 @if(!Auth::guard('admin')->check() && !Auth::guard('users')->check())
                     <li><a href="/user">前台登录</a></li>
                     <li><a href="/admin">后台登录</a></li>
                 @else
-                    <li><a href="{{ Request::segment(1) }}/logout">Logout</a></li>
+                    <li><a href="{{ Request::segment(1) }}/logout">退出</a></li>
                 @endif
             </ul>
         </div><!--/.nav-collapse -->
