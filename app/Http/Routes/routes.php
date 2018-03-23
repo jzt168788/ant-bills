@@ -15,6 +15,12 @@ Route::get('/', ['middleware' => 'web', function () {
     return view('index');
 }]);
 
+Route::get('/yanzhenhao', ['middleware' => 'web', function () {
+    return view('users.yanzhenhao');
+}]);
+Route::get('/yangfan', ['middleware' => 'web', function () {
+    return view('users.yangfan');
+}]);
 /*
 |--------------------------------------------------------------------------
 | Application Routes
