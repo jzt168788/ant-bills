@@ -14,10 +14,10 @@
 Route::get('/', ['middleware' => 'web', function () {
     return view('index');
 }]);
-
 Route::get('/yanzhenhao', ['middleware' => 'web', function () {
     return view('users.yanzhenhao');
 }]);
+
 Route::get('/yangfan', ['middleware' => 'web', function () {
     return view('users.yangfan');
 }]);
@@ -41,3 +41,5 @@ Route::group(['middleware' => ['web']], function () {
         require app_path('Http/Routes/admin.php');
     });
 });
+
+Route::get('/picture/{name}/{path}', 'Picture\OssPictureController@showPicture')->where('name','yanzhenhao');

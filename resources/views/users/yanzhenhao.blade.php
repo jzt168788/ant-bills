@@ -8,6 +8,9 @@
     <title>作品图片</title>
 </head>
 <body>
-<img src="/public/yanzhenhao/1.jpg" alt="">
+    <img src="{{env('APP_DOMAIN').'/picture/yanzhenhao/1.jpg'}}" alt="">
+    <img src="{{env('APP_DOMAIN').'/picture/yanzhenhao/2.jpg'}}" alt="">
+    <img src="{{env('APP_DOMAIN').'/picture/yanzhenhao/3.jpg'}}" alt="">
+    <img src="{{env('APP_DOMAIN').'/picture/yanzhenhao/4.jpg'}}" alt="">
 </body>
 </html>
