@@ -1,5 +1,5 @@
 @extends('users.layouts.master')
 
-@section('title', 'User Panel')
+@section('title', '作品展示')
 
-@section('body', 'You are logged in as user.')
+@section('body', 'You are logged in as Yangfan.')
