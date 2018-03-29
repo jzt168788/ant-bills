@@ -9,12 +9,12 @@
                 <div class="news-image">
                     <img src="{{ asset('asset_admin/assets/img/login-bg/bg-7.jpg') }}" data-id="login-cover-image" alt="" />
                 </div>
-                <div class="news-caption">
-                    <h4 class="caption-title"><i class="fa fa-diamond text-success"></i> Announcing the Color Admin app</h4>
-                    <p>
-                        Download the Color Admin app for iPhone®, iPad®, and Android™. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                </div>
+                {{--<div class="news-caption">--}}
+                    {{--<h4 class="caption-title"><i class="fa fa-diamond text-success"></i> Announcing the Color Admin app</h4>--}}
+                    {{--<p>--}}
+                        {{--Download the Color Admin app for iPhone®, iPad®, and Android™. Lorem ipsum dolor sit amet, consectetur adipiscing elit.--}}
+                    {{--</p>--}}
+                {{--</div>--}}
             </div>
             <!-- end news-feed -->
             <!-- begin right-content -->

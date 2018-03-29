@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="{{ asset('asset_admin/assets/css/bootstrap.min.css')}}">
     </head>
 
-    @include('layouts.frontend.navbar')
+{{--    @include('layouts.frontend.navbar')--}}
 
     <body>
         <div class="container">

@@ -26,18 +26,25 @@ class OssPictureController extends Controller
      */
     public function __construct()
     {
-        $accessKeyId = 'LTAIFxz1pWcMpXiG';
-        $accessKeySecret = '02cWnVVWK3yLyqoIw9w2P1pDG3RjFc';
-        $endpoint = 'oss-cn-beijing.aliyuncs.com';
+        $env = \App::environment() === 'production' ? 'production' : 'dev';
 
-        $this->bucket    = 'test-ant-bills';
+        $config = config('accounts.'.$env.'.oss');
+        $accessKeyId        = $config['accessKeyId'];
+        $accessKeySecret    = $config['accessKeySecret'];
+        $endpoint           = $config['endpoint'];
+
+        $this->bucket       = 'ant-bills';  //私有读写
+
         $this->ossClient = new OSS\OssClient($accessKeyId, $accessKeySecret, $endpoint, $isCName = false, $securityToken = NULL);
     }
 
     /**
-     * 获取路径
-     * @param string $path
-     * @desc  通过uploads路径查找oss文件
+     * @param         $name
+     * @param         $fileName
+     * @param Request $request
+     * @desc
+     *
+     * @author     Jinzhuotao
      */
     public function showPicture($name,$fileName,Request $request){
         $path = $name.'/'.$fileName;

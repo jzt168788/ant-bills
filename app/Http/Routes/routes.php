@@ -11,16 +11,6 @@
 |
  */
 
-Route::get('/', ['middleware' => 'web', function () {
-    return view('index');
-}]);
-Route::get('/yanzhenhao', ['middleware' => 'web', function () {
-    return view('users.yanzhenhao');
-}]);
-
-Route::get('/yangfan', ['middleware' => 'web', function () {
-    return view('users.yangfan');
-}]);
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -33,6 +23,19 @@ Route::get('/yangfan', ['middleware' => 'web', function () {
  */
 
 Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/',  function () {
+        return view('index');
+    });
+
+    Route::get('/yanzhenhao', function () {
+        return view('users.yanzhenhao');
+    });
+
+    Route::get('/yangfan', function () {
+        return view('users.yangfan');
+    });
+
     Route::group(['prefix' => 'user', 'namespace' => 'User'], function () {
         require app_path('Http/Routes/user.php');
     });
