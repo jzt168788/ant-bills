@@ -32,7 +32,7 @@
         }
 
         .title {
-            font-size: 35px;
+            font-size: 75px;
             margin-bottom: 40px;
         }
     </style>
@@ -40,7 +40,14 @@
 <body>
 <div class="container">
     <div class="content">
-        <div class="title">页面被吃了...</div>
+        <div class="title">404</div>
+        <div>
+            @if($exception->getMessage())
+                {{$exception->getMessage()}}
+            @else
+                页面被吃了...
+            @endif
+        </div>
     </div>
 </div>
 </body>

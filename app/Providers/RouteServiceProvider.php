@@ -16,6 +16,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $namespace = 'App\Http\Controllers';
 
+    protected $prefix    = '';
+
     /**
      * Define your route model bindings, pattern filters, etc.
      *
@@ -37,8 +39,39 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $router->group(['namespace' => $this->namespace], function ($router) {
+
+        $this->mapWebRoute($router);
+
+        $this->mapPartnerRoute($router);
+
+
+
+    }
+
+    public function mapWebRoute(Router $router)
+    {
+        $router->group(['namespace' => $this->namespace, 'middleware' => ['web']], function ($router) {
             require app_path('Http/Routes/routes.php');
+            require app_path('Http/Routes/user.php');       //用户相关路由
+            require app_path('Http/Routes/admin.php');      //后台相关路由
         });
+    }
+
+    public function mapPartnerRoute(Router $router)
+    {
+        $partners = ['jinzhuotao','liqinglin','yanzhenhao', 'yangfan'];
+
+        $requestUri = $_SERVER['REQUEST_URI'] ? $_SERVER['REQUEST_URI'] : '';
+        $left = substr($requestUri,strpos($requestUri,'/')+1);
+        $partnerName = strpos($left,'/') ? substr($left,0,strpos($left,'/')) : $left;
+
+        if(in_array($partnerName,$partners)){
+
+            $this->prefix = $partnerName;
+
+            $router->group(['namespace' => $this->namespace, 'middleware' => ['web'], 'prefix' => $this->prefix], function ($router) {
+                require app_path('Http/Routes/partners.php');
+            });
+        }
     }
 }

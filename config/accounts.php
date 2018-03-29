@@ -13,7 +13,7 @@ return [
             'accessKeyId'       => 'LTAIFxz1pWcMpXiG',
             'accessKeySecret'   => '02cWnVVWK3yLyqoIw9w2P1pDG3RjFc',
             'endpoint'          => 'oss-cn-zhangjiakou.aliyuncs.com',
-            'bucket'            => 'ant-bills',
+            'bucket'            => 'dev-ant-bills',
         ],
     ],
 
