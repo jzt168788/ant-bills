@@ -9,3 +9,5 @@ Route::group(['namespace' => 'Partner', 'middleware' => ['web']], function ($rou
 
     });
 });
+
+Route::get('/picture/{name}/{path}', 'Picture\OssPictureController@showPicture')->where('name',"$this->prefix");
