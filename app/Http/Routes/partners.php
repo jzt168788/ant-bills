@@ -1,7 +1,7 @@
 <?php
 Route::group(['namespace' => 'Partner', 'middleware' => ['web']], function ($router) {
 
-    Route::get('/{'.$this->prefix.'}', 'PartnerController@index');
+    Route::get('/{' . $this->prefix . '}', 'PartnerController@index');
 
     Route::group(['prefix' => $this->prefix], function ($router) {
 
@@ -9,5 +9,3 @@ Route::group(['namespace' => 'Partner', 'middleware' => ['web']], function ($rou
 
     });
 });
-
-Route::get('/picture/{name}/{path}', 'Picture\OssPictureController@showPicture')->where('name',"$this->prefix");
