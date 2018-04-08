@@ -20,6 +20,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         //角色管理
         $router->get('role/ajaxIndex',['uses'=>'RoleController@ajaxIndex','as'=>'admin.role.ajaxIndex']);
         $router->resource('role', 'RoleController');
+
+        //目录
+        $router->resource('partners', 'PartnerController');
     });
 
     Route::get('login', ['uses' => 'AuthController@index','as' => 'admin.auth.index']);
