@@ -44,8 +44,6 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapPartnerRoute($router);
 
-
-
     }
 
     public function mapWebRoute(Router $router)
@@ -69,7 +67,7 @@ class RouteServiceProvider extends ServiceProvider
 
             $this->prefix = $partnerName;
 
-            $router->group(['namespace' => $this->namespace, 'middleware' => ['web'], 'prefix' => $this->prefix], function ($router) {
+            $router->group(['namespace' => $this->namespace], function ($router) {
                 require app_path('Http/Routes/partners.php');
             });
         }

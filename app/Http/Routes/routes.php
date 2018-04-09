@@ -4,4 +4,4 @@ Route::get('/',  function () {
     return view('index');
 });
 
-Route::get('/picture/{name}/{path}', 'Picture\OssPictureController@showPicture')->where('name','yanzhenhao');
+Route::get('/picture/{name}/{path}', 'Picture\OssPictureController@showPicture');
