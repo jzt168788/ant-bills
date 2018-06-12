@@ -57,7 +57,7 @@ class RouteServiceProvider extends ServiceProvider
 
     public function mapPartnerRoute(Router $router)
     {
-        $partners = ['jinzhuotao','liqinglin','yanzhenhao', 'yangfan'];
+        $partners = ['jinzhuotao','liqinglin','yanzhenhao', 'yangfan','songlihui'];
 
         $requestUri = $_SERVER['REQUEST_URI'] ? $_SERVER['REQUEST_URI'] : '';
         $left = substr($requestUri,strpos($requestUri,'/')+1);
